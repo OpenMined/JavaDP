@@ -1,3 +1,5 @@
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/OpenMined/org.openmined.dp/live_notebooks)
+
 # org.openmined.dp
 Differential privacy implementation in the Java family of languages (Java, Kotlin, Scala etc...)
 
