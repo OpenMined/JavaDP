@@ -1,6 +1,6 @@
 # Differential Privacy notebooks for JVM languages
 
-## Environment
+## Local environment setup
 
 Notebooks in this folder have been tested with
 [BeakerX](http://beakerx.com) (available via conda, pip, and docker).
@@ -12,17 +12,14 @@ automatically.
 
 ## How to make libdifferentialprivacy-1.0.jar available:
 
-1. Install [Bazel](https://docs.bazel.build/versions/master/install.html)
-if you don't have it already.
+1. Make sure you have [Maven](https://maven.apache.org/) and [Bazel](https://docs.bazel.build/versions/master/install.html) installed.
 2. Download and build the Java [differential-privacy library](https://github.com/google/differential-privacy):
 ```
 git clone https://github.com/google/differential-privacy.git
 cd java
 bazel build ...
 ```
-3. Copy `libdifferentialprivacy.jar` to your local Maven repository and
-rename it to `libdifferentialprivacy-1.0.jar`:
+3. Install `libdifferentialprivacy.jar` in your local Maven repository:
 ```
-mkdir -p ~/.m2/repository/com/google/privacy/differentialprivacy/libdifferentialprivacy/1.0/
-cp bazel-bin/main/com/google/privacy/differentialprivacy/libdifferentialprivacy.jar ~/.m2/repository/com/google/privacy/differentialprivacy/libdifferentialprivacy/1.0/libdifferentialprivacy-1.0.jar
+mvn install:install-file -Dfile=bazel-bin/main/com/google/privacy/differentialprivacy/libdifferentialprivacy.jar -DgroupId=com.google.privacy.differentialprivacy -DartifactId=libdifferentialprivacy -Dversion=1.0 -Dpackaging=jar
 ```
