@@ -17,7 +17,7 @@ automatically.
 ```
 git clone https://github.com/google/differential-privacy.git
 cd java
-bazel build ...
+bazel build "..."
 ```
 3. Install `libdifferentialprivacy.jar` in your local Maven repository:
 ```
